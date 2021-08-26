@@ -1,0 +1,40 @@
+
+html{
+   background: url('./upload/background.jpg') bottom center; 
+   background-size:cover ;
+   font-size: 10px;
+}
+.keys{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   flex: 1;
+   min-height: 100vh;
+   font-size: 15px;
+}
+.key{
+   border: 5px solid black;
+   border-radius: 5px;
+   width: 100px;
+   margin: 0 15px;
+   text-align: center;
+   color:white;
+   background: rgb(0, 0, 0,0.4);
+   text-shadow: 0 0 5re, black;
+}
+.key kbd{
+   font-size: 4rem ;
+   display: block;
+   color: #ffff;
+}
+.key span{
+   font-size: 1.2rem;
+   color: #ffc600;
+
+}
+.playing{
+   transform: scale(1.1);
+   border-color: #ffc600;
+   box-shadow: 0 0 1rem #ffc600;
+}
