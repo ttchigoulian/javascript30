@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="idnex.css">
+</head>
+<body>
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand"></div>
+
+        </div>
+    </div>
+</body>
+    <script>
+        // 获取时分秒对象
+        const hourHand = document.querySelector('.hour-hand');
+        const minHand =document.querySelector('.min-hand');
+        const secondHand = document.querySelector('.second-hand');
+        // 获取当前的时分秒
+        function setDate(){
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            // 分别获取当前的时分秒
+            console.log(now);
+            // 计算需要的角度
+            console.log(seconds);
+            const secondDegree =  (seconds/60)*360+90;
+            const minDegree = ((minutes/60)*360)+((seconds/60)*6)+90;
+            const hourDegree = ((hours/12)*360)+((minutes/60)*30)+90;
+            if(secondDegree===90) secondHand.style.transition='all 0s'
+            else secondHand.style.transition='all .5'
+            if(minDegree===90) minDegree.style.transition='all 0s'
+            else minHand.style.transition='all .1s'
+            hourHand.style.transform = `rotate(${hourDegree}deg`;
+            minHand.style.transform = `rotate(${minDegree}deg`;
+            secondHand.style.transform = `rotate(${secondDegree}deg`;
+        }
+        setInterval(setDate,1000)
+    </script>
+</html>
