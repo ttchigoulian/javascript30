@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h2>updata CSS Variables with <span class="h2JS">JS</span></h2>
+    <div class="controls">
+        <label for="spacing">Spaing</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
+        <label for="base">Base</label>
+        <input type="color"  name="base" value="#ffc600" >
+    </div>
+    <!-- <div class="result">
+        <div class="showText">{spacing:<label id="lable_spacing">#ffc600</label>}</div>
+        <div class="showText">{blur:<label id="lable_blur">10px</label>}</div>
+        <div class="showText">{base:<label id="lable_base">10px</label>}</div>
+    </div> -->
+    <img src="http://f.hiphotos.baidu.com/lvpics/h=800/sign=b346032cbe389b5027ffed52b534e5f1/960a304e251f95ca545f8b84ce177f3e6709525d.jpg">
+    <script>
+        const inputs = document.querySelectorAll('.controls input');
+        inputs.forEach(item=>item.addEventListener('mousemove',updataData));
+        inputs.forEach(item=>item.addEventListener('change',updataData));
+        function updataData(e){
+            const suffix = this.dataset.sizing || ' ';
+            document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix);
+        }
+    </script>
+</body>
+</html>

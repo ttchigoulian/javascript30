@@ -1,0 +1,28 @@
+:root{
+    --base:#ffc600;
+    --spacing:10px;
+    --blur:10px;
+}
+body{
+    background: #193549;
+    color: #fff;   
+    text-align: center;
+}
+img{
+    width: 600px;
+    height: 400px;
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+h2{
+    font-size: 4.2em;
+}
+.h2JS{
+    color: var(--base);
+}
+
+.controls{
+    margin: 100px 0 50px 0;
+    font-size: 2.5em;
+}
